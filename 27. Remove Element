@@ -1,0 +1,15 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        
+        for slet in s: 
+            if slet in t:
+                s = s.replace(slet, '', 1)
+                t = t.replace(slet, '', 1)
+
+        print(len(s), len(t))
+
+        if len(s) == 0 and len(t) == 0:
+            return True
+        else:
+            return False
+        
