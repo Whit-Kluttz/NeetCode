@@ -1,0 +1,25 @@
+public class Solution {
+    public int RemoveDuplicates(int[] nums) {
+        int count = 0;
+List<int> result = new List<int>();
+
+for (int i = 0; i < nums.Length; i++)
+{
+    if (!result.Contains(nums[i]))
+    {
+        result.Add(nums[i]);
+        count += 1;
+    }
+}
+
+int[] newArray = new int[1000];
+for(int i = 0; i < count; i++)
+{
+    nums[i] = result[i];
+}
+
+nums = newArray;
+
+return count;
+    }
+}
