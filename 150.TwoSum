@@ -1,0 +1,28 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        pointerA = 0;
+        pointerB = 1;
+
+        while(pointerA < len(nums)):
+            while(pointerB < len(nums)):
+                if(nums[pointerA] + nums[pointerB] == target):
+                    return [pointerA, pointerB]
+                pointerB += 1
+            pointerA += 1
+            pointerB = pointerA + 1
+        
+        ## Old solution, I found a more effective solution after testing it
+
+        # pointerA = nums[0];
+        # pointerB = nums[1];
+        # pointerIndexA = 0;
+        # pointerIndexB = 1;
+
+        # while(pointerA != nums[len(nums) - 1]):
+        #     while(pointerIndexB < len(nums)):
+        #         pointerB = nums[pointerIndexB]
+        #         if(pointerA + pointerB == target):
+        #             return [pointerIndexA, pointerIndexB]
+        #         pointerIndexB += 1
+        #     pointerIndexA += 1
+        #     pointerA = nums[pointerIndexA]
