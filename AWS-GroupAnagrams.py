@@ -8,5 +8,6 @@ class Solution:
                 count[ord(c) - ord("a")] += 1
             listSort[tuple(count)].append(s)
         
+        print(listSort)
+
         return listSort.values()
-        
