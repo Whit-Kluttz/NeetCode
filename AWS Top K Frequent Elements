@@ -1,0 +1,19 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        lastNum = nums[0]
+        numsSize = {lastNum : 0}
+
+        for i in nums:
+            ## If we've changed numbers
+            if(lastNum != i):
+                numsSize[i] = 1
+            else:
+                numsSize[lastNum] += 1
+            lastNum = i
+        
+        numsToReturn = [0] * k
+
+        for i in range(0, k):
+            val = numsSize.pop(max(numsSize.values()))
+            numsToReturn[i] = val
+        return numsToReturn
